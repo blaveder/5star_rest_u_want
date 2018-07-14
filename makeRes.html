@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,12 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Make A Reservation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="main.js"></script>
 </head>
 
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1 class="display-4">5 Star Rest-U-Want!</h1>
+                    <p class="lead">Make Your Reservation</p>
+                    <hr class="my-4">
+                    <a class="btn btn-primary btn-lg" href="/resteraunt/tableData.html" role="button">View Tables</a>
+                    <a class="btn btn-danger" href="/resteraunt/makeRes.html" role="button">HOME IMAGE</a>
+                </div>
+            </div>
+        </div>
 
+        <div class="card">
+            <div class="card-header">
+                Table Reservation
+            </div>
+            <div class="panel panel-default">
+                <form>
+
+                    <div class="panel-body">
+
+                        <form role="form">
+
+                            <div class="form-group">
+                                <label for="">Name</label>
+                                <input type="text" class="form-control" id="reserve_name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Phone Number</label>
+                                <input type="text" class="form-control" id="reserve_phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="text" class="form-control" id="reserve_email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Unique ID</label>
+                                <input type="text" class="form-control" id="reserve_uniqueID">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary submit" id="add-res">Submit</button>
+                        </form>
+                    </div>
+            </div>
+
+</body>
+
+</html>
+<script type="text/javascript">
+    $("#add-res").on("click", function (event) {
+        event.preventDefault();
+        var openRes = 0;
+        var newRes = {
+            name: $("#reserve_name").val().trim(),
+            phone: $("#reserve_phone").val().trim(),
+            email: $("#reserve_email").val().trim(),
+            uniqueId: $("#reserve_uniqueID").val().trim()
+        };
+        openRes++
+        $.post("/api/reservations", newRes).then(function (data) {
+            console.log("add.html", data);
+            if (openRes == 5) {
+                alert("You have been added to the waitlist!");
+            } else {
+                alert("Reservation has been set!");
+            }
+        })
+    })
+</script>
 </body>
 
 </html>

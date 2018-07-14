@@ -1,0 +1,8 @@
+#home {
+background-color: lightgray;
+}
+
+#left {
+    padding-right: 8px;
+    border-right: 1px solid lightblue;
+}

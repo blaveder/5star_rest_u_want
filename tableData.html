@@ -6,11 +6,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Table Data</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="main.js"></script>
 </head>
 
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1 class="display-4">5 Star Rest-U-Want!</h1>
+                    <p class="lead">Make Your Reservation</p>
+                    <hr class="my-4">
+                    <a class="btn btn-primary btn-lg" href="/resteraunt/makeRes.html" role="button">View Tables</a>
+                    <a class="btn btn-danger" href="/resteraunt/home.html" role="button">HOME IMAGE</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Current Tables in Use -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Current Reservations</h4>
+                    </div>
+                    <div class="panel-body" id="tableSection">
+                        <div class="well" id="tableWell-01">
+                            <h2>
+                                <span class="label label-primary">1</span> | 5kasldfj1</h2>
+                        </div>
+                        <div class="well" id="tableWell-11">
+                            <h2>
+                                <span class="label label-primary">2</span> | 3</h2>
+                        </div>
+                        <div class="well" id="tableWell-21">
+                            <h2>
+                                <span class="label label-primary">3</span> | 1515</h2>
+                        </div>
+                        <div class="well" id="tableWell-31">
+                            <h2>
+                                <span class="label label-primary">4</span> | 12</h2>
+                        </div>
+                        <div class="well" id="tableWell-41">
+                            <h2>
+                                <span class="label label-primary">5</span> | 008</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Waiting List Panel -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Waiting List</h4>
+                    </div>
+                    <div class="panel-body" id="waitlistSection">
+                        <div class="well" id="waitlistWell-01">
+                            <h2>
+                                <span class="label label-primary">1</span> | 090</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <p>Control Panel</p>
+                <p>
+                    <a href="#" id="clear">Clear Table</a> |
+                    <a href="/api/tables">API Table Link</a> |
+                    <a href="/api/waitlist">API Wait List</a>
+                </p>
+            </div>
+        </footer>
 
 </body>
 
