@@ -1,7 +1,9 @@
+// HI ASH HI JUSTIN
 var tableDate = require('../data/tableData');
-var waitLIstData = require('../data/waitingListData');
+var waitListData = require('../data/waitingListData');
 
-module.exports = fuction(app) {
-    app.get("/api/tables")
-    res.json(tableData);
-}
+module.exports = function (app) {
+    app.get("/api/tables", function (req, res) {
+        res.json(tableData);
+    })
+};
